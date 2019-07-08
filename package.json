@@ -9,10 +9,7 @@
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "start": "npm run build && electron ./dist/main.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thlabbe/electron-copy-browse.git"
-  },
+  "repository": "https://github.com/thlabbe/electron-copy-browse.git",
   "author": "Thomas Labbé",
   "license": "GNU GPLv3",
   "bugs": {
