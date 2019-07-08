@@ -1,0 +1,27 @@
+{
+  "name": "electron-copy-browse",
+  "version": "1.0.0",
+  "description": "copy-browse (electron with TypeScript) implementation",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thlabbe/electron-copy-browse.git"
+  },
+  "author": "Thomas Labbé",
+  "license": "GNU GPLv3",
+  "bugs": {
+    "url": "https://github.com/thlabbe/electron-copy-browse/issues"
+  },
+  "homepage": "https://github.com/thlabbe/electron-copy-browse#readme",
+  "devDependencies": {
+    "electron": "^2.0.2",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  }
+}
