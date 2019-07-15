@@ -7,7 +7,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "npm run build && electron ./dist/main.js"
+    "lint+fixes": "tslint --fix -c tslint.json -p tsconfig.json",
+    "start": "npm run build && electron ./dist/main.js",
+    "html": "XCOPY /S /y .\\src\\views\\*.html .\\dist\\views"
   },
   "repository": "https://github.com/thlabbe/electron-copy-browse.git",
   "author": "Thomas Labbé",
