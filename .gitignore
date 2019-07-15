@@ -1,5 +1,7 @@
 .vscode/
-dist/*
+dist/*.js
+dist/*.js.map
+
 
 # Logs
 logs
