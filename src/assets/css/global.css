@@ -8,7 +8,7 @@
 }
 
 
-/* Global ---------------------------- */
+/* Global  */
 
 * {
   box-sizing: border-box;
@@ -25,9 +25,9 @@ html {
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
   height: 100%;
-  display: flex; 
+/*  display: flex; */
 }
 
 a {

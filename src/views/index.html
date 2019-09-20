@@ -3,27 +3,31 @@
   <head>
       <title>Electron Copy Browse</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/variables.css">
-    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/global.css">
     </head>
     <body>
         <div class="header">
             <h1>
                 <svg class="section-icon">
-                    <use xlink:href="assets/img/icons.svg#icon-windows"></use>
+                    <use xlink:href="../assets/img/icons.svg#icon-windows"></use>
                 </svg>
                 Copy Browse
             </h1>
         </div>
 
         <div class="controls">
+            <button class="button" id="copybrowse-select" >Selectionner un Copybook ...</button>
             <label class="label" for="copybook-path">Copybook : </label>
             </div><div class="controls">
     
             <input class="input" id="copybook-path" type="text" name="pattern" required placeholder="COPY.cpy">
-            <button class="button" id="copybook-analyze">Analyser</button>
+            <button class="button" id="copybook-analyze" >Analyser</button>
         </div>
-
-        <div id="copybook-result"></div>        
+        <br>
+        <div id="copybook-result"></div>
+        <script type="text/javascript">
+            require('../renderer');
+        </script>
     </body>
     </html>

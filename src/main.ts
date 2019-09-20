@@ -1,5 +1,8 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
+import { dialog } from "electron";
 import * as path from "path";
+import { COPY_ANALYZE_MSG, COPY_SELECT_MSG } from "./actions";
+import { Copy } from "./Copy";
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -49,3 +52,28 @@ app.on("activate", () => {
 
 // In this file you can include the rest of your app"s specific main process
 // code. You can also put them in separate files and require them here.
+
+
+ipcMain.on( COPY_SELECT_MSG, (event: any, ...args: any[]) => {
+  const copybook = dialog.showOpenDialog({ title: "Selectionnez un Copybook",
+        // multiSelections: false,
+        filters: [
+            { name: "Copybook", extensions: ["cpy"] },
+            { name: "Cobol", extensions: ["cob", "cbl"] },
+            { name: "All Files", extensions: ["*"] },
+        ],
+        properties: ["openFile"],
+    });
+
+  if (copybook && copybook.length >= 1) {
+    event.returnValue = copybook[0];
+  } else {
+    event.returnValue = null;
+  }
+});
+
+ipcMain.on( COPY_ANALYZE_MSG, (event: any, copyToParse: string) => {
+  const copy = new Copy(copyToParse);
+  event.returnValue = copy.parse();
+
+});

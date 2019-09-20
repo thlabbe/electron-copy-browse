@@ -11,7 +11,7 @@ export const RE_ENDS_WITH_PERIOD = new RegExp("^.*\\.\s*");
  * permet de determiner la position de ses éléments (CopyElement)
  */
 export class CopyDescription {
-    private elements: CopyElement[];
+    public elements: CopyElement[];
 
     constructor(dataDescriptions: DataDescription[]) {
 
@@ -35,6 +35,7 @@ export class CopyDescription {
         this.updateAllLengths();
         this.updateAllPositions();
     }
+    public get Elements() { return this.elements; }
 
     /* methods for queries */
     public getElementsAtPosition(position: number) {
@@ -84,9 +85,9 @@ export class CopyDescription {
             } else if (elem.Level <= previousElement.level) {
                 positions[elem.Level] = positions[previousElement.level] + previousElement.length;
             }
-            if (elem.Position === null) {
+            //if (elem.Position==undefined) {
                 this.elements[i].Position = positions[elem.Level];
-            }
+            //}
 
             previousElement.length = this.elements[i].Length;
             previousElement.position = this.elements[i].Position;

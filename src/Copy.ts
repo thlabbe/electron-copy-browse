@@ -3,10 +3,11 @@ import { CopyDescription, DEFAULT_ENCODING, RE_ENDS_WITH_PERIOD, RE_IS_COMMENT }
 import { DataDescription } from "./DataDescription";
 
 export class Copy {
-    
+
     private copybook: string;
     private encoding: string;
     private rawLines: string[];
+
     constructor(filename: string, options?: any) {
         this.copybook = filename;
         if (options) {
